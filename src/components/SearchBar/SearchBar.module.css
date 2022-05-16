@@ -1,0 +1,22 @@
+.container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  padding-left: 0.75rem;
+  margin-right: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #dfdfde;
+}
+
+.button {
+  border-radius: 0.3rem;
+  border: none;
+  padding: 0.5rem;
+  background-color: #113cfc;
+  color: white;
+}

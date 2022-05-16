@@ -2,7 +2,7 @@ import React from 'react';
 import Cards from './components/Cards';
 import SearchBar from './components/SearchBar';
 import data, { Cairns } from './data.js';
-import './App.css';
+import './globalStyles.css';
 
 function App() {
   return (
