@@ -10,10 +10,10 @@ export default function Cards({ cities }) {
       {cities.map((city) => (
         <Card
           key={city.id}
-          max={city.main.temp_max}
-          min={city.main.temp_min}
+          max={city.max}
+          min={city.min}
           name={city.name}
-          img={city.weather[0].icon}
+          img={city.img}
           onClose={() => alert(city.name)}
         />
       ))}

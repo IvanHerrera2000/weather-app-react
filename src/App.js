@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Cards from './components/Cards';
 import Navbar from './components/Navbar';
-import data from './data.js';
 import './globalStyles.css';
 
 function App() {
@@ -16,7 +15,22 @@ function App() {
       .then((response) => response.json())
       .then((resource) => {
         if (resource.main !== undefined) {
-          console.log(resource);
+          const city = {
+            min: Math.round(resource.main.temp_min),
+            max: Math.round(resource.main.temp_max),
+            img: resource.weather[0].icon,
+            id: resource.id,
+            wind: resource.wind.speed,
+            temp: resource.main.temp,
+            name: resource.name,
+            weather: resource.weather[0].main,
+            clouds: resource.clouds.all,
+            latitud: resource.coord.lat,
+            longitud: resource.coord.lon,
+          };
+          setCities((oldCities) => [...oldCities, city]);
+        } else {
+          alert('City not found');
         }
       });
   }
@@ -24,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <Navbar onSearch={onSearch} />
-      <Cards cities={data} />
+      <Cards cities={cities} />
     </div>
   );
 }
