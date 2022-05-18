@@ -28,17 +28,28 @@ function App() {
             latitud: resource.coord.lat,
             longitud: resource.coord.lon,
           };
-          setCities((oldCities) => [...oldCities, city]);
+
+          setCities((oldCities) => {
+            if (oldCities.some((city) => city.name === city.name)) {
+              return oldCities;
+            } else {
+              return [...oldCities, city];
+            }
+          });
         } else {
           alert('City not found');
         }
       });
   }
 
+  function onClose(id) {
+    setCities((oldCities) => oldCities.filter((city) => city.id !== id));
+  }
+
   return (
     <div className="App">
       <Navbar onSearch={onSearch} />
-      <Cards cities={cities} />
+      <Cards cities={cities} onClose={onClose} />
     </div>
   );
 }
