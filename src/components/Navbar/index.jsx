@@ -6,7 +6,7 @@ function Navbar({ onSearch }) {
   return (
     <div className={style.container}>
       <h2 className={style.title}>Henry - Weather App</h2>
-      <SearchBar />
+      <SearchBar onSearch={onSearch} />
     </div>
   );
 }
