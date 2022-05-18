@@ -1,19 +1,14 @@
 import React from 'react';
 import Cards from './components/Cards';
-import SearchBar from './components/SearchBar';
-import data, { Cairns } from './data.js';
+import Navbar from './components/Navbar';
+import data from './data.js';
 import './globalStyles.css';
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <SearchBar onSearch={(ciudad) => alert(ciudad)} />
-      </div>
-      <div>
-        <Cards cities={data} />
-      </div>
-      <hr />
+      <Navbar />
+      <Cards cities={data} />
     </div>
   );
 }
