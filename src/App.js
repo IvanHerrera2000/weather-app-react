@@ -28,14 +28,7 @@ function App() {
             latitud: resource.coord.lat,
             longitud: resource.coord.lon,
           };
-
-          setCities((oldCities) => {
-            if (oldCities.some((city) => city.name === city.name)) {
-              return oldCities;
-            } else {
-              return [...oldCities, city];
-            }
-          });
+          setCities((oldCities) => [...oldCities, city]);
         } else {
           alert('City not found');
         }

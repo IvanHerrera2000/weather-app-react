@@ -15,6 +15,7 @@ export default function Cards({ cities, onClose }) {
           name={city.name}
           img={city.img}
           onClose={() => onClose(city.id)}
+          id={city.id}
         />
       ))}
     </div>

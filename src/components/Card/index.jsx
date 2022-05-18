@@ -9,8 +9,8 @@ export default function Card({ max, min, name, img, onClose }) {
       </button>
       <h4 className={style.name}>{name}</h4>
       <div className={style.infoContainer}>
-        <p>Min {min}</p>
-        <p>Max {max}</p>
+        <p>Min: {min}°</p>
+        <p>Max: {max}°</p>
       </div>
       <div className={style.imgContainer}>
         <img
