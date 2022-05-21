@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 import Cards from './components/Cards';
 import Navbar from './components/Navbar';
 import './globalStyles.css';
@@ -42,7 +43,9 @@ function App() {
   return (
     <div className="App">
       <Navbar onSearch={onSearch} />
-      <Cards cities={cities} onClose={onClose} />
+      <Route exact path="/">
+        <Cards cities={cities} onClose={onClose} />
+      </Route>
     </div>
   );
 }
