@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from './Card.module.css';
 
-export default function Card({ max, min, name, img, onClose }) {
+export default function Card({ max, min, name, img, onClose, id }) {
   return (
     <div className={style.container}>
       <button onClick={onClose} className={style.button}>
         X
       </button>
-      <h4 className={style.name}>{name}</h4>
+      <Link to={`/city/${id}`} className={style.name}>
+        {name}
+      </Link>
       <div className={style.infoContainer}>
         <p>Min: {min}°</p>
         <p>Max: {max}°</p>

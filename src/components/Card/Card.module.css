@@ -11,6 +11,8 @@
 .name {
   margin-top: 2rem;
   text-align: center;
+  font-size: 2rem;
+  color: black;
 }
 
 .infoContainer {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Cards from './components/Cards';
 import Navbar from './components/Navbar';
+import City from './components/City';
 import './globalStyles.css';
 
 function App() {
@@ -40,12 +41,26 @@ function App() {
     setCities((oldCities) => oldCities.filter((city) => city.id !== id));
   }
 
+  function onFilter(cityId) {
+    let city = cities.filter((c) => c.id === parseInt(cityId));
+    if (city.length > 0) {
+      return city[0];
+    } else {
+      return null;
+    }
+  }
+
   return (
     <div className="App">
       <Navbar onSearch={onSearch} />
       <Route exact path="/">
         <Cards cities={cities} onClose={onClose} />
       </Route>
+      <Route
+        exact
+        path="/city/:id"
+        render={({ match }) => <City city={onFilter(match.params.id)} />}
+      />
     </div>
   );
 }
