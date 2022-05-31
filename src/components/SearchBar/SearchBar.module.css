@@ -18,3 +18,23 @@
   background-color: #113cfc;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .input {
+    font-size: 1rem;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .input {
+    font-size: 0.7rem;
+  }
+  .button {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+}

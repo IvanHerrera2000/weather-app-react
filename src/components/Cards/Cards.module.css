@@ -1,5 +1,15 @@
 .container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
 }
